@@ -14,6 +14,9 @@ class Solution:
 
         self.reverse(m)
         m_prev.next = n
+
+        # why this line??? why m not change and can still represent the original
+        # left node which is the last in the reversed section now?
         m.next = n_next
 
         return dummy.next
