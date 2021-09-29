@@ -11,6 +11,7 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
 
+        prev = None
         while slow:
             next_head = slow.next
             slow.next = prev
@@ -24,3 +25,9 @@ class Solution:
             head = head.next
 
         return True
+
+#why can not use? what are the differences between prev, prev.val, prev.next?
+        # if prev != head:
+        #     return False
+        # else:
+        #     return True
