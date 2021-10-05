@@ -6,22 +6,12 @@ class DLinkedList:
         self.next = None
 
 class LRUCache:
-
-    def __init__(self, capacity: int):
-        self.size = 0
-        self.capacity = capacity
-        self.cache = {}
-
-        self.head, self.tail = DLinkedList(), DLinkedList()
-
-        self.head.next = self.tail
-        self.tail.prev = self.head
-
     def _add_node(self, node):
         node.prev = self.head
         node.next = self.head.next
-        self.head.next = node
+
         self.head.next.prev = node
+        self.head.next = node
 
     def _pop_tail(self):
         lru = self.tail.prev
@@ -34,6 +24,16 @@ class LRUCache:
 
         prev.next = new
         new.prev = prev
+
+    def __init__(self, capacity: int):
+        self.size = 0
+        self.capacity = capacity
+        self.cache = {}
+
+        self.head, self.tail = DLinkedList(), DLinkedList()
+
+        self.head.next = self.tail
+        self.tail.prev = self.head
 
     def get(self, key: int) -> int:
         node = self.cache.get(key, None)
@@ -59,9 +59,8 @@ class LRUCache:
 
             if self.size > self.capacity:
                 tail = self._pop_tail()
+                del self.cache[tail.key]
                 self.size -= 1
-                lru_key = tail.key
-                del self.cache[lru_key]
 
         else:
             node.value = value
