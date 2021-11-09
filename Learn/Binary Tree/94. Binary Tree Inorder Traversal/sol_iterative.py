@@ -17,3 +17,7 @@ class Solution:
             root = stack.pop()
             res.append(root.val) #这里是append root.val
             root = root.right
+
+# time O(n)
+# space O(n)
+# because we need to access every node for 1 time
