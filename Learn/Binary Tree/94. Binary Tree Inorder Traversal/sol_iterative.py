@@ -10,10 +10,10 @@ class Solution:
 
         while True:
             while root:
-                stack.append(root)
+                stack.append(root) #这里是append root
                 root = root.left
             if not stack:
                 return res
             root = stack.pop()
-            res.append(root.val)
+            res.append(root.val) #这里是append root.val
             root = root.right
