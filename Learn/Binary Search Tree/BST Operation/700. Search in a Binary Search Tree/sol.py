@@ -18,4 +18,4 @@ class Solution:
         return None
 
 # time O(H) H is the height of the Tree
-# space O(1) cause no additional data structure used to store
+# space O(1) cause recursion stack used
