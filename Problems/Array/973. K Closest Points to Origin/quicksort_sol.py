@@ -27,3 +27,5 @@ class Solution:
 
         sort(0, len(points)-1, k)
         return points[:k]
+
+# sol: https://www.youtube.com/watch?v=G9VcMTSZ1Lo&t=1357s
