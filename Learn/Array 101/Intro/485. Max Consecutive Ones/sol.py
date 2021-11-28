@@ -13,4 +13,3 @@ class Solution:
                 cnt = 0
 
         return max(max_cnt, cnt)
-        
