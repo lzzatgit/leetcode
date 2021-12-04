@@ -6,7 +6,7 @@ class Solution:
         i = 0
         for j in range(1, len(nums)):
             if nums[i] != nums[j]:
-                i += 1
+                i += 1 #now the element that i is pointing to is guaranteed to be a duplicated elemented
                 nums[i] = nums[j]
 
         return i + 1
