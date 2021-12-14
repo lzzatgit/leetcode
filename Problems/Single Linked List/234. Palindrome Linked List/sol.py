@@ -3,14 +3,22 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        fast = head
-        slow = head
+        slow, fast = head, head
+
+        # find the middle of the linked list (slow)
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
 
+        # start to reverse the 2nd half of the linked list, starting slow
+        # after reverse, prev is the start
         prev = None
         while slow:
             next_head = slow.next
@@ -18,6 +26,7 @@ class Solution:
             prev = slow
             slow = next_head
 
+        # check palindrome
         while prev:
             if prev.val != head.val:
                 return False
@@ -26,8 +35,6 @@ class Solution:
 
         return True
 
-#why can not use? what are the differences between prev, prev.val, prev.next?
-        # if prev != head:
-        #     return False
-        # else:
-        #     return True
+# https://www.youtube.com/watch?v=yOzXms1J6Nk
+# time O(n)
+# space O(1)
