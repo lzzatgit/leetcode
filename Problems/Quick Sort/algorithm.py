@@ -1,5 +1,5 @@
 def quicksort(nums, low, high):
-    if low >= high:
+    if low >= high: #这个终止条件要记清楚
         return
     p = partition(nums, low, high)
 
