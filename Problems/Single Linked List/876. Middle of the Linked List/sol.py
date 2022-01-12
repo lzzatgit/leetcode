@@ -12,4 +12,6 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
 
-        return slow
+        return
+
+# 记住这个快慢指针的方法返回的是（当奇数个）中点，（当偶数个）最中间两个的第二个
