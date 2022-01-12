@@ -5,32 +5,33 @@
 #         self.next = next
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
-        dummy = ListNode(float("-inf"), head)
-        m_prev = self.findkth(dummy, left-1)
+        dummy = ListNode(0, head)
+        m_prev = self.findKth(dummy, left - 1)
         m = m_prev.next
-        n = self.findkth(dummy, right)
+        n = self.findKth(dummy, right)
         n_next = n.next
-        n.next = None
+        n.next = None # this is very important, to seperate the sublist from the main list, otherwise will reverse everything after m
 
         self.reverse(m)
-        m_prev.next = n
 
-        # why this line??? why m not change and can still represent the original
-        # left node which is the last in the reversed section now?
+        # connect the head and tail correspondingly
+        m_prev.next = n
         m.next = n_next
 
         return dummy.next
 
-    def findkth(self, head, k):
+    def findKth(self, head, k):
         for i in range(k):
             head = head.next
         return head
 
     def reverse(self, head):
         prev = None
-        while head is not None:
-            next_head = head.next
+
+        while head:
+            head_next = head.next
             head.next = prev
             prev = head
-            head = next_head
+            head = head_next
+
         return prev
