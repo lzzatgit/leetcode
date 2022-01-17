@@ -33,3 +33,8 @@ class HitCounter:
 # obj = HitCounter()
 # obj.hit(timestamp)
 # param_2 = obj.getHits(timestamp)
+
+
+# leetcode sol comment
+# time O(1)
+#space O(N) --  need to keep a deque with length N
