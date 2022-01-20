@@ -34,3 +34,5 @@ class Solution:
             i += 1
 
         return cur_sum
+
+# https://www.youtube.com/watch?v=081AqOuasw0
