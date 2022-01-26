@@ -12,12 +12,13 @@ class Solution:
         heapq.heapify(heap) # O(logn)
 
         while counter < k:
-            ele, row, col = heapq.heappop(heap) # O(1)
+            ele, row, col = heapq.heappop(heap) # O(logx) where x = min(n, k)
             if col < m-1:
-                heapq.heappush(heap, (matrix[row][col+1], row, col+1)) # O(logn)
+                heapq.heappush(heap, (matrix[row][col+1], row, col+1)) # O(logx)
             counter += 1
 
         return ele
 
 # leetcode Solution
-# time O()
+# time O(nlogk)
+# space O()
