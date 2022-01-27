@@ -9,7 +9,7 @@ class Solution:
         # create a heap with size of min(N, K)
         for i in range(min(n, k)):
             heap.append((matrix[i][0], i, 0))
-        heapq.heapify(heap) # O(logn)
+        heapq.heapify(heap)
 
         while counter < k:
             ele, row, col = heapq.heappop(heap) # O(logx) where x = min(n, k)
@@ -20,5 +20,5 @@ class Solution:
         return ele
 
 # leetcode Solution
-# time O(nlogk)
-# space O()
+# time O(x + klogx)
+# space O(x)
