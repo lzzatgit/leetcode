@@ -28,4 +28,4 @@ class Solution:
         return res
 
 # time O(n)
-# space O(h)
+# space O(h) avg, worset case O(n)
