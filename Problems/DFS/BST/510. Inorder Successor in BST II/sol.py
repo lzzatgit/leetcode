@@ -25,5 +25,5 @@ class Solution:
         return node.parent
 
 # leetcode Solution
-# time O(H) where H is the height of the tree
+# time O(H) where H is the height of the tree, O(N) worst case
 # space O(1)
